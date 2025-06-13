@@ -140,6 +140,13 @@
                     </p>
                 </div>
 
+                <div id="answersSummary" class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">あなたの回答</h3>
+                    <ul id="answersList" class="space-y-2">
+                        <!-- Answers will be inserted here -->
+                    </ul>
+                </div>
+
                 <div id="matchResults" class="space-y-4 mb-8">
                     <!-- Results will be inserted here -->
                 </div>
@@ -608,6 +615,7 @@
             const matches = calculateMatches(candidates);
             
             displayResults(matches);
+            displayUserAnswers();
             createChart(matches);
             saveToHistory();
 
@@ -682,7 +690,20 @@
                     </div>
                 `;
                 
-                matchResults.appendChild(resultCard);
+            matchResults.appendChild(resultCard);
+        });
+    }
+
+        function displayUserAnswers() {
+            const answersList = document.getElementById('answersList');
+            answersList.innerHTML = '';
+            questions.forEach((q, i) => {
+                const value = userAnswers[i];
+                if (value !== undefined) {
+                    const li = document.createElement('li');
+                    li.textContent = `${i + 1}. ${q.title} : ${getAnswerText(value)}`;
+                    answersList.appendChild(li);
+                }
             });
         }
 
