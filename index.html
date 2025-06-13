@@ -634,9 +634,10 @@
             return candidates.map(candidate => {
                 const positions = partyPositions[candidate.party] || [3,3,3,3,3];
                 const similarity = calculateCosineSimilarity(userAnswers, positions);
+                const percentage = similarity * 100;
                 return {
                     ...candidate,
-                    matchPercentage: Math.round(similarity * 100)
+                    matchPercentage: parseFloat(percentage.toFixed(1))
                 };
             }).sort((a, b) => b.matchPercentage - a.matchPercentage);
         }
@@ -704,9 +705,10 @@
         function calculatePartyMatches() {
             return Object.entries(partyPositions).map(([party, positions]) => {
                 const similarity = calculateCosineSimilarity(userAnswers, positions);
+                const percentage = similarity * 100;
                 return {
                     party,
-                    matchPercentage: Math.round(similarity * 100)
+                    matchPercentage: parseFloat(percentage.toFixed(1))
                 };
             }).sort((a, b) => b.matchPercentage - a.matchPercentage);
         }
