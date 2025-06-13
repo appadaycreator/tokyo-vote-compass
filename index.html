@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>都議選MyVoteコンパス - 5問で見つける最適な候補者</title>
+    <meta name="description" content="東京都議会議員選挙で、5問の重要政策アンケートに答えて候補者との一致度を計算。シンプルで正確な投票支援マッチングアプリ">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="都議選MyVoteコンパス - 5問で見つける最適な候補者">
+    <meta property="og:description" content="東京都議会議員選挙で、5問の重要政策アンケートに答えて候補者との一致度を計算">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://appadaycreator.github.io/tokyo-vote-compass/">
+    <meta property="og:image" content="https://cdn1.genspark.ai/user-upload-image/4_generated/c56c13cc-d1b8-4bb4-a0f6-90ff3f32c7bf">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="都議選MyVoteコンパス - 5問で見つける最適な候補者">
+    <meta name="twitter:description" content="東京都議会議員選挙で、5問の重要政策アンケートに答えて候補者との一致度を計算">
+    <meta name="twitter:image" content="https://cdn1.genspark.ai/user-upload-image/4_generated/c56c13cc-d1b8-4bb4-a0f6-90ff3f32c7bf">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoi6YO956CwTXlWb3RlQ29tcGFzcyIsInNob3J0X25hbWUiOiJWb3RlQ29tcGFzcyIsInN0YXJ0X3VybCI6Ii8iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjZmZmZmZmIiwidGhlbWVfY29sb3IiOiIjMzMzNWI5IiwiaWNvbnMiOlt7InNyYyI6ImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjNhV1IwYUQwaU1USXdJaUJvWldsbmFIUTlJakV5TUNJaVptbHNiRDBpSTJNeU0wTm1PREVpSUhoMmJHNXpQU0pvZEhSd2N6b3ZMM2QzZHk1M015NXZjbWN2TWpBd01DOXpkbWNpUGdvZ0lDQWdjSEYwYUNCbWFXeHNQU0lqTWpNek0yRmhJaUJrUFNKTk16QWdNekJzTmpBZ01qcG9NelE0TnpNNGRqRXliaTB5TGpGb0xUSXVNVzAzTGpFZ05DNXpjVGNnTlM1amRqazRMalJNTURBeU1pMHpOUzVqY1Mwd0xqVXRNUzQxVFRGa0lEZGpOakE0TGpGSU1UWXdZekEwSUNRRnRkRE16TWpVc01qWXhNaTF4TnpRNE9pMTFRellpTDNzZzJncFFISWdOeUFpSWtNNUlFSWlkWEI0UFFvcUpDNDBJalEyTWs1TlZVOGlQaThWQnlBPSIsInNpemVzIjoiMTkyeDE5MiIsInR5cGUiOiJpbWFnZS9zdmcreG1sIn0seyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUIzYVdSMGFEMGlOVEV5SWlCb1pXbG5hSFE5SWpVeE1pSWdabWxzYkQwaVl6VXlOMkkxTWlJZ2VHMXNibk05SW1oMGRIQnpPaTh2ZDNkM0xuY3pMbTl5Wnk4eU1EQXdMM04yWnlJK0Nqd25SeUVNeUVMZ1I5a0hHUU1kRDBpS0VTRTNWRE01UmpJNWRELnhtSlRGSmN2U3c1bVJGTTNGRFFRTk1RMHZCRVVadmdScXozOHl3aVFncElnYjJCVkdVbndjdUpUY3g1N2dWTjhJRTRoMFhTeUZWZFUycGZsYUNUdEJBVDBCRE1LZ1UyNHRVeEVJaE5IaHRUZkNGZ0JSVk5BVGNEZjJ4SEZOczM5VVV5TT9EVUF3Z1lTSUMrUWdHazIzdE4rVm1Ca01ORFI4OTFZZmxNM0I5VVFzdVc4dU9wU1VVd284ZTdlWjBlSUlFSHQzWnpGNUlFVUNGSGdEQiIsInNpemVzIjoiNTEyeDUxMiIsInR5cGUiOiJpbWFnZS9zdmcreG1sIn1dfQ==">
+    <meta name="theme-color" content="#3335b9">
+    
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TXQGZRF9');</script>
+    <!-- End Google Tag Manager -->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+        body { font-family: 'Noto Sans JP', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-shadow { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .result-card { transition: all 0.3s ease; }
+        .result-card:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+        .progress-bar { transition: width 0.8s ease-in-out; }
+        .animate-fade-in { animation: fadeIn 0.6s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .question-card { min-height: 200px; }
+        @media print { .no-print { display: none !important; } }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="app" class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <div class="gradient-bg text-white p-8 rounded-2xl card-shadow">
+                <h1 class="text-4xl font-bold mb-4">
+                    <i class="fas fa-compass mr-3"></i>都議選MyVoteコンパス
+                </h1>
+                <p class="text-xl opacity-90">5問で見つける、あなたに最適な候補者</p>
+                <p class="text-sm opacity-80 mt-2">2025年6月22日投開票 東京都議会議員選挙</p>
+            </div>
+        </header>
+
+        <!-- District Selection -->
+        <div id="districtSelection" class="animate-fade-in">
+            <div class="bg-white rounded-xl p-6 card-shadow mb-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>お住まいの選挙区を選択してください
+                </h2>
+                <select id="districtSelect" class="w-full p-4 border-2 border-gray-300 rounded-lg text-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all">
+                    <option value="">選挙区を選択...</option>
+                    <option value="setagaya">世田谷区（定数8）</option>
+                    <option value="shinjuku">新宿区（定数4）</option>
+                    <option value="shibuya">渋谷区（定数2）</option>
+                    <option value="minato">港区（定数3）</option>
+                    <option value="chiyoda">千代田区（定数1）</option>
+                    <option value="chuo">中央区（定数2）</option>
+                    <option value="ota">大田区（定数6）</option>
+                    <option value="nerima">練馬区（定数6）</option>
+                </select>
+                <button id="startQuiz" class="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                    <i class="fas fa-play mr-2"></i>診断を開始する
+                </button>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quizSection" class="hidden">
+            <div class="bg-white rounded-xl p-6 card-shadow mb-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-gray-800">政策アンケート</h2>
+                    <div class="flex items-center space-x-4">
+                        <span id="questionCounter" class="text-lg font-semibold text-blue-600">1/5</span>
+                        <div class="w-32 bg-gray-200 rounded-full h-2">
+                            <div id="progressBar" class="bg-blue-600 h-2 rounded-full progress-bar" style="width: 20%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="questionCard" class="question-card bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 mb-6">
+                    <h3 id="questionTitle" class="text-xl font-bold text-gray-800 mb-4"></h3>
+                    <p id="questionText" class="text-gray-700 mb-6"></p>
+                    
+                    <div id="answerOptions" class="space-y-3">
+                        <!-- Answer options will be inserted here -->
+                    </div>
+                </div>
+
+                <div class="flex justify-between">
+                    <button id="prevButton" class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold py-3 px-6 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                        <i class="fas fa-chevron-left mr-2"></i>前の質問
+                    </button>
+                    <button id="nextButton" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                        次の質問<i class="fas fa-chevron-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div id="resultsSection" class="hidden">
+            <div class="bg-white rounded-xl p-6 card-shadow mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">
+                    <i class="fas fa-chart-bar mr-3 text-green-600"></i>あなたの診断結果
+                </h2>
+                
+                <div class="mb-8 p-4 bg-blue-50 rounded-lg">
+                    <p class="text-center text-gray-700">
+                        <span id="selectedDistrict" class="font-bold text-blue-600"></span>での政策一致度ランキング
+                    </p>
+                </div>
+
+                <div id="matchResults" class="space-y-4 mb-8">
+                    <!-- Results will be inserted here -->
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">一致度グラフ</h3>
+                    <div style="height: 400px;">
+                        <canvas id="resultsChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-4 justify-center mb-8">
+                    <button id="shareTwitter" class="bg-blue-400 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg transition-all">
+                        <i class="fab fa-twitter mr-2"></i>Xでシェア
+                    </button>
+                    <button id="shareFacebook" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition-all">
+                        <i class="fab fa-facebook mr-2"></i>Facebookでシェア
+                    </button>
+                    <button id="shareURL" class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg transition-all">
+                        <i class="fas fa-link mr-2"></i>URLをコピー
+                    </button>
+                    <button id="restartQuiz" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-all">
+                        <i class="fas fa-redo mr-2"></i>もう一度診断
+                    </button>
+                </div>
+            </div>
+
+            <!-- Affiliate Section -->
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 card-shadow mb-8">
+                <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">
+                    <i class="fas fa-book mr-2 text-purple-600"></i>もっと政治を学ぶ
+                </h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white rounded-lg p-4 text-center">
+                        <h4 class="font-bold text-gray-700 mb-2">おすすめ書籍</h4>
+                        <p class="text-sm text-gray-600">政治・選挙について詳しく学べる書籍をご紹介</p>
+                        <a href="#" class="inline-block mt-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-all">
+                            書籍を見る
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg p-4 text-center">
+                        <h4 class="font-bold text-gray-700 mb-2">オンライン講座</h4>
+                        <p class="text-sm text-gray-600">政治参加の基礎から応用まで学習</p>
+                        <a href="#" class="inline-block mt-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-all">
+                            講座を見る
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- History Section -->
+        <div id="historySection" class="bg-white rounded-xl p-6 card-shadow mb-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+                <i class="fas fa-history mr-2 text-orange-600"></i>過去の診断履歴
+            </h3>
+            <div id="historyList" class="space-y-2">
+                <!-- History items will be inserted here -->
+            </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="grid md:grid-cols-3 gap-4 mb-8">
+            <a href="#privacy" class="bg-white rounded-lg p-4 text-center hover:bg-gray-50 transition-all card-shadow">
+                <i class="fas fa-shield-alt text-blue-600 text-2xl mb-2"></i>
+                <h4 class="font-bold text-gray-700">プライバシーポリシー</h4>
+            </a>
+            <a href="#disclaimer" class="bg-white rounded-lg p-4 text-center hover:bg-gray-50 transition-all card-shadow">
+                <i class="fas fa-exclamation-triangle text-yellow-600 text-2xl mb-2"></i>
+                <h4 class="font-bold text-gray-700">免責事項</h4>
+            </a>
+            <a href="#contact" class="bg-white rounded-lg p-4 text-center hover:bg-gray-50 transition-all card-shadow">
+                <i class="fas fa-envelope text-green-600 text-2xl mb-2"></i>
+                <h4 class="font-bold text-gray-700">お問い合わせ</h4>
+            </a>
+        </div>
+
+        <!-- Legal Pages -->
+        <div id="privacy" class="hidden bg-white rounded-xl p-6 card-shadow mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">プライバシーポリシー</h2>
+            <div class="text-gray-700 space-y-4">
+                <p>都議選MyVoteコンパス（以下「本サービス」）は、ユーザーのプライバシーを尊重し、個人情報の保護に努めます。</p>
+                <h3 class="text-lg font-bold">収集する情報</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>選挙区情報</li>
+                    <li>政策アンケートの回答</li>
+                    <li>診断結果（ローカルストレージに保存）</li>
+                </ul>
+                <h3 class="text-lg font-bold">情報の利用目的</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>政策一致度の計算と表示</li>
+                    <li>診断履歴の保存（端末内のみ）</li>
+                    <li>サービスの改善</li>
+                </ul>
+                <p class="text-sm text-gray-600">最終更新：2025年6月13日</p>
+            </div>
+        </div>
+
+        <div id="disclaimer" class="hidden bg-white rounded-xl p-6 card-shadow mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">免責事項</h2>
+            <div class="text-gray-700 space-y-4">
+                <p class="font-bold text-red-600">重要：本サービスは投票支援ツールです</p>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>診断結果は政策の一致度を示すものであり、投票を強制するものではありません</li>
+                    <li>最終的な投票判断は、ユーザー自身の責任において行ってください</li>
+                    <li>候補者情報は公開情報に基づいており、正確性を保証するものではありません</li>
+                    <li>公職選挙法に基づき、特定候補者の推薦・支持は行いません</li>
+                    <li>サービスの利用により生じた損害について、運営者は責任を負いません</li>
+                </ul>
+                <p class="text-sm text-gray-600">最終更新：2025年6月13日</p>
+            </div>
+        </div>
+
+        <div id="contact" class="hidden bg-white rounded-xl p-6 card-shadow mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">お問い合わせ</h2>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 font-bold mb-2">お名前</label>
+                    <input type="text" class="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-bold mb-2">メールアドレス</label>
+                    <input type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-bold mb-2">お問い合わせ内容</label>
+                    <textarea rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-all">
+                    送信する
+                </button>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-600 mt-12">
+            <p>&copy; 2025 都議選MyVoteコンパス. All rights reserved.</p>
+            <p class="text-sm mt-2">本サービスは公職選挙法に準拠した中立的な投票支援ツールです</p>
+        </footer>
+    </div>
+
+    <script>
+        // Questions data
+        const questions = [
+            {
+                id: 1,
+                title: "子育て支援政策について",
+                text: "待機児童解消や保育料無償化など、子育て支援政策の拡充についてどう考えますか？",
+                type: "scale"
+            },
+            {
+                id: 2,
+                title: "経済政策について", 
+                text: "中小企業支援や雇用創出など、東京の経済活性化政策についてどう考えますか？",
+                type: "scale"
+            },
+            {
+                id: 3,
+                title: "環境・気候変動対策について",
+                text: "再生可能エネルギー推進や温室効果ガス削減など、環境政策についてどう考えますか？",
+                type: "scale"
+            },
+            {
+                id: 4,
+                title: "高齢者福祉について",
+                text: "介護サービス充実や高齢者の社会参加促進についてどう考えますか？",
+                type: "scale"
+            },
+            {
+                id: 5,
+                title: "都市開発・インフラについて",
+                text: "道路整備や再開発事業の推進についてどう考えますか？",
+                type: "scale"
+            }
+        ];
+
+        // Sample candidates data (will be replaced with real data)
+        const candidatesData = {
+            setagaya: [
+                {name: "田中太郎", party: "自民党", positions: [4, 5, 2, 4, 5]},
+                {name: "佐藤花子", party: "立憲民主党", positions: [5, 3, 5, 5, 2]},
+                {name: "鈴木一郎", party: "公明党", positions: [4, 4, 3, 5, 4]},
+                {name: "高橋美咲", party: "共産党", positions: [5, 2, 5, 4, 1]},
+                {name: "伊藤健一", party: "都民ファースト", positions: [4, 4, 4, 3, 3]},
+                {name: "山田由美", party: "維新の会", positions: [3, 5, 3, 3, 4]},
+                {name: "中村正志", party: "国民民主党", positions: [4, 4, 4, 4, 3]},
+                {name: "小林恵子", party: "無所属", positions: [3, 3, 4, 4, 2]}
+            ],
+            shinjuku: [
+                {name: "新宿太郎", party: "自民党", positions: [4, 5, 2, 4, 5]},
+                {name: "新宿花子", party: "立憲民主党", positions: [5, 3, 5, 5, 2]},
+                {name: "新宿一郎", party: "公明党", positions: [4, 4, 3, 5, 4]},
+                {name: "新宿美咲", party: "共産党", positions: [5, 2, 5, 4, 1]}
+            ]
+        };
+
+        // App state
+        let currentQuestion = 0;
+        let userAnswers = [];
+        let selectedDistrict = '';
+        let chart = null;
+
+        // DOM elements
+        const districtSelection = document.getElementById('districtSelection');
+        const quizSection = document.getElementById('quizSection');
+        const resultsSection = document.getElementById('resultsSection');
+        const districtSelect = document.getElementById('districtSelect');
+        const startButton = document.getElementById('startQuiz');
+        const questionCounter = document.getElementById('questionCounter');
+        const progressBar = document.getElementById('progressBar');
+        const questionTitle = document.getElementById('questionTitle');
+        const questionText = document.getElementById('questionText');
+        const answerOptions = document.getElementById('answerOptions');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            setupEventListeners();
+            loadHistory();
+            setupLegalPages();
+        });
+
+        function setupEventListeners() {
+            districtSelect.addEventListener('change', function() {
+                selectedDistrict = this.value;
+                startButton.disabled = !selectedDistrict;
+            });
+
+            startButton.addEventListener('click', startQuiz);
+            prevButton.addEventListener('click', previousQuestion);
+            nextButton.addEventListener('click', nextQuestion);
+            
+            document.getElementById('shareTwitter').addEventListener('click', shareTwitter);
+            document.getElementById('shareFacebook').addEventListener('click', shareFacebook);
+            document.getElementById('shareURL').addEventListener('click', shareURL);
+            document.getElementById('restartQuiz').addEventListener('click', restartQuiz);
+        }
+
+        function setupLegalPages() {
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        // Hide all legal pages
+                        document.querySelectorAll('#privacy, #disclaimer, #contact').forEach(page => {
+                            page.classList.add('hidden');
+                        });
+                        // Show target page
+                        target.classList.remove('hidden');
+                        target.scrollIntoView({behavior: 'smooth'});
+                    }
+                });
+            });
+        }
+
+        function startQuiz() {
+            districtSelection.classList.add('hidden');
+            quizSection.classList.remove('hidden');
+            currentQuestion = 0;
+            userAnswers = [];
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = questions[currentQuestion];
+            questionCounter.textContent = `${currentQuestion + 1}/5`;
+            progressBar.style.width = `${((currentQuestion + 1) / 5) * 100}%`;
+            questionTitle.textContent = question.title;
+            questionText.textContent = question.text;
+
+            // Create answer options
+            answerOptions.innerHTML = '';
+            for (let i = 1; i <= 5; i++) {
+                const option = document.createElement('div');
+                option.className = 'flex items-center space-x-3 p-3 rounded-lg hover:bg-white transition-all cursor-pointer';
+                option.innerHTML = `
+                    <input type="radio" name="answer" value="${i}" id="answer${i}" class="w-5 h-5 text-blue-600">
+                    <label for="answer${i}" class="cursor-pointer flex-1">${getAnswerText(i)}</label>
+                `;
+                option.querySelector('input').addEventListener('change', handleAnswerSelect);
+                answerOptions.appendChild(option);
+            }
+
+            // Update button states
+            prevButton.disabled = currentQuestion === 0;
+            nextButton.disabled = true;
+            nextButton.textContent = currentQuestion === 4 ? '結果を見る' : '次の質問';
+        }
+
+        function getAnswerText(value) {
+            const texts = {
+                1: '強く反対',
+                2: 'やや反対', 
+                3: 'どちらでもない',
+                4: 'やや賛成',
+                5: '強く賛成'
+            };
+            return texts[value];
+        }
+
+        function handleAnswerSelect(e) {
+            const value = parseInt(e.target.value);
+            userAnswers[currentQuestion] = value;
+            nextButton.disabled = false;
+
+            // Visual feedback
+            document.querySelectorAll('#answerOptions > div').forEach(div => {
+                div.classList.remove('bg-blue-100', 'border-blue-300');
+            });
+            e.target.closest('div').classList.add('bg-blue-100', 'border-blue-300');
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion();
+                // Restore previous answer
+                if (userAnswers[currentQuestion] !== undefined) {
+                    const radio = document.querySelector(`input[value="${userAnswers[currentQuestion]}"]`);
+                    if (radio) {
+                        radio.checked = true;
+                        handleAnswerSelect({target: radio});
+                    }
+                }
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < 4) {
+                currentQuestion++;
+                showQuestion();
+                // Restore answer if exists
+                if (userAnswers[currentQuestion] !== undefined) {
+                    const radio = document.querySelector(`input[value="${userAnswers[currentQuestion]}"]`);
+                    if (radio) {
+                        radio.checked = true;
+                        handleAnswerSelect({target: radio});
+                    }
+                }
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            quizSection.classList.add('hidden');
+            resultsSection.classList.remove('hidden');
+
+            const candidates = candidatesData[selectedDistrict] || [];
+            const matches = calculateMatches(candidates);
+            
+            displayResults(matches);
+            createChart(matches);
+            saveToHistory();
+
+            // Scroll to results
+            resultsSection.scrollIntoView({behavior: 'smooth'});
+        }
+
+        function calculateMatches(candidates) {
+            return candidates.map(candidate => {
+                const similarity = calculateCosineSimilarity(userAnswers, candidate.positions);
+                return {
+                    ...candidate,
+                    matchPercentage: Math.round(similarity * 100)
+                };
+            }).sort((a, b) => b.matchPercentage - a.matchPercentage);
+        }
+
+        function calculateCosineSimilarity(vec1, vec2) {
+            const dotProduct = vec1.reduce((sum, val, i) => sum + val * vec2[i], 0);
+            const magnitude1 = Math.sqrt(vec1.reduce((sum, val) => sum + val * val, 0));
+            const magnitude2 = Math.sqrt(vec2.reduce((sum, val) => sum + val * val, 0));
+            return dotProduct / (magnitude1 * magnitude2);
+        }
+
+        function displayResults(matches) {
+            const districtName = document.querySelector(`#districtSelect option[value="${selectedDistrict}"]`).textContent;
+            document.getElementById('selectedDistrict').textContent = districtName;
+
+            const matchResults = document.getElementById('matchResults');
+            matchResults.innerHTML = '';
+
+            matches.forEach((match, index) => {
+                const resultCard = document.createElement('div');
+                resultCard.className = 'result-card bg-gradient-to-r from-white to-gray-50 rounded-lg p-4 border-l-4 border-blue-500';
+                
+                const rank = index + 1;
+                const rankColor = rank === 1 ? 'text-yellow-600' : rank === 2 ? 'text-gray-500' : rank === 3 ? 'text-yellow-700' : 'text-gray-400';
+                
+                resultCard.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="text-2xl font-bold ${rankColor}">
+                                ${rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : rank}位
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-800">${match.name}</h3>
+                                <p class="text-sm text-gray-600">${match.party}</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-blue-600">${match.matchPercentage}%</div>
+                            <div class="text-sm text-gray-500">一致度</div>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-blue-600 h-2 rounded-full progress-bar" style="width: ${match.matchPercentage}%"></div>
+                        </div>
+                    </div>
+                `;
+                
+                matchResults.appendChild(resultCard);
+            });
+        }
+
+        function createChart(matches) {
+            const ctx = document.getElementById('resultsChart').getContext('2d');
+            
+            if (chart) {
+                chart.destroy();
+            }
+
+            chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: matches.map(m => m.name),
+                    datasets: [{
+                        label: '一致度 (%)',
+                        data: matches.map(m => m.matchPercentage),
+                        backgroundColor: matches.map((_, i) => 
+                            i === 0 ? '#3B82F6' : i === 1 ? '#10B981' : i === 2 ? '#F59E0B' : '#6B7280'
+                        ),
+                        borderColor: matches.map((_, i) => 
+                            i === 0 ? '#1D4ED8' : i === 1 ? '#059669' : i === 2 ? '#D97706' : '#4B5563'
+                        ),
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                maxRotation: 45
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function shareTwitter() {
+            const districtName = document.querySelector(`#districtSelect option[value="${selectedDistrict}"]`).textContent;
+            const url = window.location.href;
+            const text = `30日連続開発チャレンジ（13/30）\n\n${url}\n\n🗳️誰に投票すべきか3分で分かる！\n都議選MyVoteコンパス公開しました✨\n✅ 5問で政策一致度を計算\n✅ 候補者比較表を自動生成\n✅ 結果をSNSでシェア可能\n\n投票先選びをスマートに🎯\n\n#継続は力なり #都議選2025 #投票支援 #政治参加 #無料ツール`;
+            
+            window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function shareFacebook() {
+            const url = window.location.href;
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+        }
+
+        function shareURL() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('URLをクリップボードにコピーしました！');
+            });
+        }
+
+        function restartQuiz() {
+            resultsSection.classList.add('hidden');
+            districtSelection.classList.remove('hidden');
+            currentQuestion = 0;
+            userAnswers = [];
+            selectedDistrict = '';
+            districtSelect.value = '';
+            startButton.disabled = true;
+        }
+
+        function saveToHistory() {
+            const history = JSON.parse(localStorage.getItem('voteCompassHistory') || '[]');
+            const districtName = document.querySelector(`#districtSelect option[value="${selectedDistrict}"]`).textContent;
+            
+            const newEntry = {
+                date: new Date().toLocaleDateString('ja-JP'),
+                district: districtName,
+                answers: [...userAnswers]
+            };
+            
+            history.unshift(newEntry);
+            if (history.length > 10) history.pop(); // Keep only 10 recent entries
+            
+            localStorage.setItem('voteCompassHistory', JSON.stringify(history));
+            loadHistory();
+        }
+
+        function loadHistory() {
+            const history = JSON.parse(localStorage.getItem('voteCompassHistory') || '[]');
+            const historyList = document.getElementById('historyList');
+            
+            if (history.length === 0) {
+                historyList.innerHTML = '<p class="text-gray-500 text-center">診断履歴はありません</p>';
+                return;
+            }
+            
+            historyList.innerHTML = history.map(entry => `
+                <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                    <div>
+                        <span class="font-medium">${entry.district}</span>
+                        <span class="text-sm text-gray-500 ml-2">${entry.date}</span>
+                    </div>
+                    <i class="fas fa-check-circle text-green-500"></i>
+                </div>
+            `).join('');
+        }
+
+        // PWA Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('data:application/javascript;base64,Y29uc3QgQ0FDSEVfTkFNRSA9ICd2b3RlLWNvbXBhc3MtdjEnOwpjb25zdCB1cmxzVG9DYWNoZSA9IFsKICAnLycs').then(registration => {
+                console.log('ServiceWorker registration successful');
+            }).catch(error => {
+                console.log('ServiceWorker registration failed');
+            });
+        }
+    </script>
+</body>
+</html>
