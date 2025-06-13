@@ -336,7 +336,7 @@
         // Sample candidates data (will be replaced with real data)
         const candidatesData = {
             setagaya: [
-                {name: "三宅茂樹", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49821/"},
+                {name: "三宅茂樹", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49821/", officialUrl: "https://example.com"},
                 {name: "里吉ゆみ", party: "共産", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49823/"},
                 {name: "小松大祐", party: "自民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49824/"},
                 {name: "福島理恵子", party: "都ファ", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49825/"},
@@ -656,7 +656,8 @@
                             <div>
                                 <h3 class="text-lg font-bold text-gray-800">${match.name}</h3>
                                 <p class="text-sm text-gray-600">${match.party}</p>
-                                ${match.url ? `<a href="${match.url}" target="_blank" class="text-blue-600 underline text-sm">公式サイト</a>` : ''}
+                                ${match.url ? `<a href="${match.url}" target="_blank" class="text-blue-600 underline text-sm mr-2">読売新聞サイト</a>` : ''}
+                                ${match.officialUrl ? `<a href="${match.officialUrl}" target="_blank" class="text-blue-600 underline text-sm">公式サイト</a>` : ''}
                             </div>
                         </div>
                         <div class="text-right">
