@@ -441,13 +441,6 @@
                 {name: "中村幸信", party: "再生", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49769/"}
             ]
         };
-        function assignPositionsByParty(data) {
-            Object.values(data).forEach(district => {
-                district.forEach(candidate => {
-                    candidate.positions = partyPositions[candidate.party] || [3,3,3,3,3];
-                });
-            });
-        }
 
         // App state
         let currentQuestion = 0;
@@ -471,7 +464,6 @@
 
         // Initialize app
         document.addEventListener('DOMContentLoaded', function() {
-            assignPositionsByParty(candidatesData);
             setupEventListeners();
             loadHistory();
             setupLegalPages();
@@ -625,7 +617,8 @@
 
         function calculateMatches(candidates) {
             return candidates.map(candidate => {
-                const similarity = calculateCosineSimilarity(userAnswers, candidate.positions);
+                const positions = partyPositions[candidate.party] || [3,3,3,3,3];
+                const similarity = calculateCosineSimilarity(userAnswers, positions);
                 return {
                     ...candidate,
                     matchPercentage: Math.round(similarity * 100)
