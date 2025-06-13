@@ -318,29 +318,111 @@
         // Sample candidates data (will be replaced with real data)
         const candidatesData = {
             setagaya: [
-                {name: "田中太郎", party: "自民党", positions: [4, 5, 2, 4, 5], url: ""},
-                {name: "佐藤花子", party: "立憲民主党", positions: [5, 3, 5, 5, 2], url: ""},
-                {name: "鈴木一郎", party: "公明党", positions: [4, 4, 3, 5, 4], url: ""},
-                {name: "高橋美咲", party: "共産党", positions: [5, 2, 5, 4, 1], url: ""},
-                {name: "伊藤健一", party: "都民ファースト", positions: [4, 4, 4, 3, 3], url: ""},
-                {name: "山田由美", party: "維新の会", positions: [3, 5, 3, 3, 4], url: ""},
-                {name: "中村正志", party: "国民民主党", positions: [4, 4, 4, 4, 3], url: ""},
-                {name: "小林恵子", party: "無所属", positions: [3, 3, 4, 4, 2], url: ""}
+                {name: "三宅茂樹", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49821/"},
+                {name: "里吉ゆみ", party: "共産", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49823/"},
+                {name: "小松大祐", party: "自民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49824/"},
+                {name: "福島理恵子", party: "都ファ", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49825/"},
+                {name: "高久則男", party: "公明", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49826/"},
+                {name: "風間穣", party: "立民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49827/"},
+                {name: "望月正謹", party: "参政", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49828/"},
+                {name: "高岡潤子", party: "ネット", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49829/"},
+                {name: "高野貴裕", party: "都ファ", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49830/"},
+                {name: "神村浩平", party: "れいわ", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49831/"},
+                {name: "久禮義継", party: "再生", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49833/"},
+                {name: "鳥海彩", party: "再生", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49834/"},
+                {name: "中島里奈", party: "国民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49835/"},
+                {name: "坂本雅志", party: "国民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49836/"},
+                {name: "平井茂", party: "諸派", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49837/"},
+                {name: "阿部力也", party: "諸派", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49890/"},
+                {name: "クガイ", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49895/"},
+                {name: "河村建一", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49906/"}
             ],
             shinjuku: [
-                {name: "新宿太郎", party: "自民党", positions: [4, 5, 2, 4, 5], url: ""},
-                {name: "新宿花子", party: "立憲民主党", positions: [5, 3, 5, 5, 2], url: ""},
-                {name: "新宿一郎", party: "公明党", positions: [4, 4, 3, 5, 4], url: ""},
-                {name: "新宿美咲", party: "共産党", positions: [5, 2, 5, 4, 1], url: ""}
+                {name: "大山とも子", party: "共産", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49613/"},
+                {name: "古城将夫", party: "公明", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49614/"},
+                {name: "吉住栄郎", party: "自民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49616/"},
+                {name: "三雲崇正", party: "立民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49617/"},
+                {name: "宮本聖菜", party: "都ファ", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49618/"},
+                {name: "平良雄大", party: "再生", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49619/"},
+                {name: "弘田敏康", party: "再生", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49620/"},
+                {name: "奥本有里", party: "国民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49905/"}
+            ],
+            shibuya: [
+                {name: "龍円愛梨", party: "都ファ", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49719/"},
+                {name: "中田喬士", party: "立民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49720/"},
+                {name: "中村豪志", party: "自民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49721/"},
+                {name: "萩原崇", party: "再生", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49722/"},
+                {name: "出村浩司", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49925/"}
+            ],
+            minato: [
+                {name: "菅野弘一", party: "自民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49600/"},
+                {name: "山野井毅", party: "立民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49602/"},
+                {name: "加藤なぎさ", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49603/"},
+                {name: "宮崎大輔", party: "国民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49604/"},
+                {name: "田島みわ", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49605/"},
+                {name: "金沢一樹", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49606/"},
+                {name: "吉野純子", party: "諸派", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49608/"}
+            ],
+            chiyoda: [
+                {name: "平慶翔", party: "都ファ", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49588/"},
+                {name: "林則行", party: "自民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49590/"},
+                {name: "木村正明", party: "共産", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49591/"},
+                {name: "柳沢誉之", party: "再生", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49592/"},
+                {name: "内田直之", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49593/"},
+                {name: "ナカジマケンジ", party: "諸派", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49971/"},
+                {name: "佐藤沙織里", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49975/"}
+            ],
+            chuo: [
+                {name: "石島秀起", party: "自民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49594/"},
+                {name: "高橋真規子", party: "都ファ", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49595/"},
+                {name: "愛みち子", party: "社民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49596/"},
+                {name: "天野こころ", party: "再生", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49597/"},
+                {name: "佐藤広樹", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49599/"}
+            ],
+            ota: [
+                {name: "鈴木章浩", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49805/"},
+                {name: "森愛", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49806/"},
+                {name: "藤田綾子", party: "共産", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49807/"},
+                {name: "勝亦聡", party: "公明", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49808/"},
+                {name: "玉川英俊", party: "公明", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49809/"},
+                {name: "松田龍典", party: "維新", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49810/"},
+                {name: "最上佳則", party: "参政", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49811/"},
+                {name: "荻野稔", party: "都ファ", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49813/"},
+                {name: "湯本良太郎", party: "自民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49814/"},
+                {name: "福井悠太", party: "国民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49815/"},
+                {name: "加藤哲雄", party: "再生", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49816/"},
+                {name: "山下興一", party: "再生", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49818/"},
+                {name: "桶屋誠人", party: "立民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49819/"},
+                {name: "大和行男", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49820/"},
+                {name: "原忠信", party: "諸派", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49899/"},
+                {name: "越智寛之", party: "諸派", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49957/"}
+            ],
+            nerima: [
+                {name: "山加朱美", party: "自民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49749/"},
+                {name: "小林健二", party: "公明", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49750/"},
+                {name: "柴崎幹男", party: "自民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49751/"},
+                {name: "尾島紘平", party: "都ファ", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49752/"},
+                {name: "村松一希", party: "都ファ", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49753/"},
+                {name: "戸谷英津子", party: "共産", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49754/"},
+                {name: "藤井智教", party: "立民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49755/"},
+                {name: "若旅啓太", party: "維新", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49756/"},
+                {name: "江崎早苗", party: "参政", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49757/"},
+                {name: "田口由理", party: "れいわ", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49758/"},
+                {name: "古山葉子", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49759/"},
+                {name: "上間貴子", party: "再生", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49760/"},
+                {name: "小川佳子", party: "無所属", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49762/"},
+                {name: "山口花", party: "国民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49763/"},
+                {name: "鍋岡幸則", party: "諸派", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49916/"},
+                {name: "前田太一", party: "諸派", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49928/"}
             ],
             toshima: [
-                {name: "早坂義弘", party: "自民党", positions: [4, 5, 2, 4, 5], url: "https://www.tokyo-hayasaka.com/"},
-                {name: "長橋桂一", party: "公明党", positions: [4, 4, 3, 5, 4], url: "https://www.komei.or.jp/km/tokyo-nagahashi-keiichi/"},
-                {name: "とがし都", party: "都民ファースト", positions: [5, 4, 4, 3, 3], url: "https://yukitogashi.com/"},
-                {name: "米倉春奈", party: "共産党", positions: [5, 2, 5, 4, 1], url: "https://www2.jcp-tokyo.net/yonekura/profile/"}
+                {name: "米倉春奈", party: "共産", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49765/"},
+                {name: "本橋弘隆", party: "都ファ", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49766/"},
+                {name: "池田裕一", party: "自民", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49767/"},
+                {name: "谷公代", party: "公明", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49768/"},
+                {name: "中村幸信", party: "再生", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49769/"}
             ]
         };
-
         // App state
         let currentQuestion = 0;
         let userAnswers = [];
