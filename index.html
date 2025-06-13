@@ -318,26 +318,26 @@
         // Sample candidates data (will be replaced with real data)
         const candidatesData = {
             setagaya: [
-                {name: "田中太郎", party: "自民党", positions: [4, 5, 2, 4, 5]},
-                {name: "佐藤花子", party: "立憲民主党", positions: [5, 3, 5, 5, 2]},
-                {name: "鈴木一郎", party: "公明党", positions: [4, 4, 3, 5, 4]},
-                {name: "高橋美咲", party: "共産党", positions: [5, 2, 5, 4, 1]},
-                {name: "伊藤健一", party: "都民ファースト", positions: [4, 4, 4, 3, 3]},
-                {name: "山田由美", party: "維新の会", positions: [3, 5, 3, 3, 4]},
-                {name: "中村正志", party: "国民民主党", positions: [4, 4, 4, 4, 3]},
-                {name: "小林恵子", party: "無所属", positions: [3, 3, 4, 4, 2]}
+                {name: "田中太郎", party: "自民党", positions: [4, 5, 2, 4, 5], url: ""},
+                {name: "佐藤花子", party: "立憲民主党", positions: [5, 3, 5, 5, 2], url: ""},
+                {name: "鈴木一郎", party: "公明党", positions: [4, 4, 3, 5, 4], url: ""},
+                {name: "高橋美咲", party: "共産党", positions: [5, 2, 5, 4, 1], url: ""},
+                {name: "伊藤健一", party: "都民ファースト", positions: [4, 4, 4, 3, 3], url: ""},
+                {name: "山田由美", party: "維新の会", positions: [3, 5, 3, 3, 4], url: ""},
+                {name: "中村正志", party: "国民民主党", positions: [4, 4, 4, 4, 3], url: ""},
+                {name: "小林恵子", party: "無所属", positions: [3, 3, 4, 4, 2], url: ""}
             ],
             shinjuku: [
-                {name: "新宿太郎", party: "自民党", positions: [4, 5, 2, 4, 5]},
-                {name: "新宿花子", party: "立憲民主党", positions: [5, 3, 5, 5, 2]},
-                {name: "新宿一郎", party: "公明党", positions: [4, 4, 3, 5, 4]},
-                {name: "新宿美咲", party: "共産党", positions: [5, 2, 5, 4, 1]}
+                {name: "新宿太郎", party: "自民党", positions: [4, 5, 2, 4, 5], url: ""},
+                {name: "新宿花子", party: "立憲民主党", positions: [5, 3, 5, 5, 2], url: ""},
+                {name: "新宿一郎", party: "公明党", positions: [4, 4, 3, 5, 4], url: ""},
+                {name: "新宿美咲", party: "共産党", positions: [5, 2, 5, 4, 1], url: ""}
             ],
             toshima: [
-                {name: "早坂義弘", party: "自民党", positions: [4, 5, 2, 4, 5]},
-                {name: "長橋桂一", party: "公明党", positions: [4, 4, 3, 5, 4]},
-                {name: "とがし都", party: "都民ファースト", positions: [5, 4, 4, 3, 3]},
-                {name: "米倉春奈", party: "共産党", positions: [5, 2, 5, 4, 1]}
+                {name: "早坂義弘", party: "自民党", positions: [4, 5, 2, 4, 5], url: "https://www.tokyo-hayasaka.com/"},
+                {name: "長橋桂一", party: "公明党", positions: [4, 4, 3, 5, 4], url: "https://www.komei.or.jp/km/tokyo-nagahashi-keiichi/"},
+                {name: "とがし都", party: "都民ファースト", positions: [5, 4, 4, 3, 3], url: "https://yukitogashi.com/"},
+                {name: "米倉春奈", party: "共産党", positions: [5, 2, 5, 4, 1], url: "https://www2.jcp-tokyo.net/yonekura/profile/"}
             ]
         };
 
@@ -547,6 +547,7 @@
                             <div>
                                 <h3 class="text-lg font-bold text-gray-800">${match.name}</h3>
                                 <p class="text-sm text-gray-600">${match.party}</p>
+                                ${match.url ? `<a href="${match.url}" target="_blank" class="text-blue-600 underline text-sm">公式サイト</a>` : ''}
                             </div>
                         </div>
                         <div class="text-right">
