@@ -460,6 +460,13 @@
             startButton.addEventListener('click', startQuiz);
             prevButton.addEventListener('click', previousQuestion);
             nextButton.addEventListener('click', nextQuestion);
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !nextButton.disabled && !quizSection.classList.contains('hidden')) {
+                    e.preventDefault();
+                    nextQuestion();
+                }
+            });
             
             document.getElementById('shareTwitter').addEventListener('click', shareTwitter);
             document.getElementById('shareFacebook').addEventListener('click', shareFacebook);
