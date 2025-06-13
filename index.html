@@ -316,6 +316,23 @@
             }
         ];
 
+        const partyPositions = {
+            "自民": [4,4,3,4,5],
+            "立民": [4,4,4,3,4],
+            "共産": [5,3,5,4,2],
+            "公明": [3,4,3,4,4],
+            "維新": [2,5,2,3,5],
+            "都ファ": [3,3,4,4,4],
+            "国民": [3,4,3,3,4],
+            "社民": [5,3,5,4,2],
+            "れいわ": [5,3,5,5,2],
+            "ネット": [4,4,5,3,3],
+            "参政": [2,2,2,3,3],
+            "再生": [3,3,3,3,3],
+            "諸派": [3,3,3,3,3],
+            "無所属": [3,3,3,3,3]
+        };
+
         // Sample candidates data (will be replaced with real data)
         const candidatesData = {
             setagaya: [
@@ -424,6 +441,14 @@
                 {name: "中村幸信", party: "再生", positions: [3,3,3,3,3], url: "https://www.yomiuri.co.jp/election/togisen/2025/YH13XXXXXX000/49769/"}
             ]
         };
+        function assignPositionsByParty(data) {
+            Object.values(data).forEach(district => {
+                district.forEach(candidate => {
+                    candidate.positions = partyPositions[candidate.party] || [3,3,3,3,3];
+                });
+            });
+        }
+
         // App state
         let currentQuestion = 0;
         let userAnswers = [];
@@ -446,6 +471,7 @@
 
         // Initialize app
         document.addEventListener('DOMContentLoaded', function() {
+            assignPositionsByParty(candidatesData);
             setupEventListeners();
             loadHistory();
             setupLegalPages();
