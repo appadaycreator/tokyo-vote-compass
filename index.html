@@ -69,6 +69,14 @@
                 <p class="text-sm opacity-80 mt-2">2025年6月22日投開票 東京都議会議員選挙</p>
             </div>
         </header>
+        <div class="flex justify-end mb-4">
+            <label for="fontSizeSelect" class="mr-2 text-sm text-gray-700">文字サイズ</label>
+            <select id="fontSizeSelect" class="border border-gray-300 rounded p-1 text-sm">
+                <option value="100">標準</option>
+                <option value="125">大</option>
+                <option value="150">特大</option>
+            </select>
+        </div>
 
         <!-- District Selection -->
         <div id="districtSelection" class="animate-fade-in">
@@ -477,12 +485,14 @@
         const answerOptions = document.getElementById('answerOptions');
         const prevButton = document.getElementById('prevButton');
         const nextButton = document.getElementById('nextButton');
+        const fontSizeSelect = document.getElementById('fontSizeSelect');
 
         // Initialize app
         document.addEventListener('DOMContentLoaded', function() {
             setupEventListeners();
             loadHistory();
             setupLegalPages();
+            loadFontSize();
         });
 
         function setupEventListeners() {
@@ -494,6 +504,9 @@
             startButton.addEventListener('click', startQuiz);
             prevButton.addEventListener('click', previousQuestion);
             nextButton.addEventListener('click', nextQuestion);
+            fontSizeSelect.addEventListener('change', function() {
+                updateFontSize(this.value);
+            });
 
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter' && !nextButton.disabled && !quizSection.classList.contains('hidden')) {
@@ -892,6 +905,17 @@
                 const item = historyList.children[index];
                 item.addEventListener('click', () => showHistoryEntry(entry));
             });
+        }
+
+        function updateFontSize(size) {
+            document.documentElement.style.fontSize = size + '%';
+            localStorage.setItem('fontSize', size);
+        }
+
+        function loadFontSize() {
+            const size = localStorage.getItem('fontSize') || '100';
+            fontSizeSelect.value = size;
+            updateFontSize(size);
         }
 
         // PWA Service Worker
