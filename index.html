@@ -633,6 +633,16 @@
             return dotProduct / (magnitude1 * magnitude2);
         }
 
+        function getMatchComment(percentage) {
+            if (percentage >= 80) {
+                return '非常に意見が近いようです。';
+            } else if (percentage >= 60) {
+                return '意見が近い部分が多いようです。';
+            } else {
+                return '意見の違いが大きいようです。';
+            }
+        }
+
         function displayResults(matches) {
             const districtName = document.querySelector(`#districtSelect option[value="${selectedDistrict}"]`).textContent;
             document.getElementById('selectedDistrict').textContent = districtName;
@@ -668,6 +678,7 @@
                         <div class="w-full bg-gray-200 rounded-full h-2">
                             <div class="bg-blue-600 h-2 rounded-full progress-bar" style="width: ${match.matchPercentage}%"></div>
                         </div>
+                        <div class="text-xs text-gray-500 mt-1">${getMatchComment(match.matchPercentage)}※5問の回答から算出した参考値です</div>
                     </div>
                 `;
                 
